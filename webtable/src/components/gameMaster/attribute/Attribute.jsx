@@ -61,10 +61,27 @@ function Attribute() {
   const [explanation, setExplanation] = useState("");
   const [attributes, setAttributes] = useState(startList);
   const [editOpen, setEditOpen] = useState(false);
+  const [activeIndex, setActiveIndex] = useState("");
 
-  const handleChange = () => {
-    // console.log(attributes[index].id);
+  const handleChange = (index) => {
     setEditOpen(false);
+    attributes[index].name = name;
+    attributes[index].short = short;
+    attributes[index].startValue = startValue;
+    attributes[index].explanation = explanation;
+    setName("");
+    setShort("");
+    setStartValue("");
+    setExplanation("");
+  };
+
+  const handleEdit = (index) => {
+    setEditOpen(true);
+    setActiveIndex(index);
+    setName(attributes[index].name);
+    setShort(attributes[index].short);
+    setStartValue(attributes[index].startValue);
+    setExplanation(attributes[index].explanation);
   };
 
   const handleDelete = (index) => {
@@ -120,8 +137,9 @@ function Attribute() {
           setExplanation={setExplanation}
           handleChange={handleChange}
           handleDelete={handleDelete}
+          handleEdit={handleEdit}
           editOpen={editOpen}
-          setEditOpen={setEditOpen}
+          activeIndex={activeIndex}
         />
       </Grid>
     </Grid>

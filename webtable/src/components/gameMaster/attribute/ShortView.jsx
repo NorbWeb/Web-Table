@@ -86,7 +86,7 @@ function ShortView({ attributes }) {
 }
 
 ShortView.propTypes = {
-  attributes: PropTypes.arrayOf().isRequired,
+  attributes: PropTypes.array.isRequired,
 };
 
 export default ShortView;

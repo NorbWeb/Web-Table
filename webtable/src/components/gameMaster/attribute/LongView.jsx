@@ -10,7 +10,6 @@ import PropTypes from "prop-types";
 import EditIcon from "@mui/icons-material/Edit";
 import CheckIcon from "@mui/icons-material/Check";
 import DeleteIcon from "@mui/icons-material/Delete";
-import { useState } from "react";
 
 function LongView({
   attributes,
@@ -23,20 +22,12 @@ function LongView({
   explanation,
   setExplanation,
   handleDelete,
+  handleChange,
+  handleEdit,
   editOpen,
-  setEditOpen,
+  activeIndex,
 }) {
-  const [activeIndex, setActiveIndex] = useState("");
-  const handleEdit = (index) => {
-    setEditOpen(true);
-    setActiveIndex(index);
-    setName(attributes[index].name);
-    setShort(attributes[index].short);
-    setStartValue(attributes[index].startValue);
-    setExplanation(attributes[index].explanation);
-  };
-
-// const handleChange
+ 
 
   return (
     <Box
@@ -141,7 +132,7 @@ function LongView({
                       color: "success.main",
                     },
                   }}
-                  onClick={() => handleEdit(index)}
+                  onClick={() => handleChange(index)}
                 >
                   <CheckIcon />
                 </IconButton>
@@ -211,8 +202,20 @@ function LongView({
 }
 
 LongView.propTypes = {
-  attributes: PropTypes.arrayOf().isRequired,
+  attributes: PropTypes.array.isRequired,
   handleDelete: PropTypes.func.isRequired,
+  name: PropTypes.string.isRequired,
+  setName: PropTypes.func.isRequired,
+  short: PropTypes.string.isRequired,
+  setShort: PropTypes.func.isRequired,
+  startValue: PropTypes.string.isRequired,
+  setStartValue: PropTypes.func.isRequired,
+  explanation: PropTypes.string.isRequired,
+  setExplanation: PropTypes.func.isRequired,
+  editOpen: PropTypes.bool.isRequired,
+  handleChange: PropTypes.func.isRequired,
+  handleEdit: PropTypes.func.isRequired,
+  activeIndex: PropTypes.number.isRequired,
 };
 
 export default LongView;

@@ -7,7 +7,7 @@ export default function Home() {
       <NavBar />
       <Box sx={{ m: 2 }}>
         <Typography sx={{ mb: 2 }} variant="h4">
-          Welcome the the Main Page!
+          Welcome to the Main Page!
         </Typography>
         <Typography>
           By now, no interesting content exist to be displayed. Lay down, wait

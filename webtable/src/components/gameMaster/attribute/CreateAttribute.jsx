@@ -1,7 +1,8 @@
 import { Box, Button, Stack, TextField, Typography } from "@mui/material";
 import PropTypes from "prop-types";
 
-function CreateAttribute({name,
+function CreateAttribute({
+  name,
   setName,
   short,
   setShort,
@@ -10,9 +11,8 @@ function CreateAttribute({name,
   explanation,
   setExplanation,
   handleSubmit,
-  editOpen}) {
-  
-
+  editOpen,
+}) {
   return (
     <Box
       className="create-attribute"
@@ -85,10 +85,13 @@ CreateAttribute.propTypes = {
   short: PropTypes.node.isRequired,
   setShort: PropTypes.func.isRequired,
   startValue: PropTypes.node.isRequired,
+  startValue: PropTypes.string.isRequired,
   setStartValue: PropTypes.func.isRequired,
   explanation: PropTypes.node.isRequired,
   setExplanation: PropTypes.func.isRequired,
   handleSubmit: PropTypes.func.isRequired,
+  editOpen: PropTypes.bool.isRequired,
 };
 
 export default CreateAttribute;
+

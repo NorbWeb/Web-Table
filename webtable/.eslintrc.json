@@ -1,28 +1,42 @@
 {
     "env": {
-        "browser": true,
-        "es2021": true
+      "browser": true,
+      "es2021": true
     },
     "extends": [
-        "eslint:recommended",
-        "plugin:react/recommended"
+      "plugin:react/recommended"
     ],
     "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true
-        },
-        "ecmaVersion": "latest"
+      "ecmaFeatures": {
+        "jsx": true
+      },
+      "ecmaVersion": "latest",
+      "sourceType": "module"
     },
-    "plugins": [
-        "react"
-    ],
+    "plugins": ["react", "import"],
     "rules": {
-        
-            "parser": "babel-eslint",
-            "parserOptions": {
-              "sourceType": "module",
-              "allowImportExportEverywhere": true
-            }
-          
+      "no-console": "off",
+      "no-restricted-syntax": [
+        "error",
+        {
+          "selector": "CallExpression[callee.object.name='console'][callee.property.name!=/^(error|warn)$/]",
+          "message": "You can only call the error() and warn() functions from the console object"
+        }
+      ],
+      "react/react-in-jsx-scope": "off",
+      "react/jsx-one-expression-per-line": "off"
+    },
+    "settings": {
+      "import/resolver": {
+        "eslint-import-resolver-custom-alias": {
+          "alias": {
+            "@assets": "./src/assets",
+            "@components": "./src/components",
+            "@pages": "./src/pages",
+            "@services": "./src/services"
+          },
+          "extensions": [".js", ".jsx"]
+        }
+      }
     }
-}
+  }
