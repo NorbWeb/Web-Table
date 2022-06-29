@@ -11,7 +11,7 @@ import Avatar from "@mui/material/Avatar";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import PropTypes from "prop-types";
-import { Link } from "@mui/material";
+import { Link, Button } from "@mui/material";
 import { Link as RouterLink, MemoryRouter } from "react-router-dom";
 import { StaticRouter } from "react-router-dom/server";
 
@@ -64,30 +64,36 @@ function NavBar() {
 
   return (
     <AppBar position="static">
-      <Container maxWidth="xl">
+      <Container maxWidth="xxl">
         <Toolbar disableGutters>
           {/* ------------------------------- when diplay large ------------------------------- */}
           <Avatar
             sx={{ display: { xs: "none", md: "flex" }, mr: 2 }}
-            src="src\assets\round-table.png"
+            src="round-table.png"
           />
-          <Typography
-            variant="h6"
-            noWrap
-            component="a"
-            href="/"
-            sx={{
-              mr: 2,
-              display: { xs: "none", md: "flex" },
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
-            }}
+          <Link
+            color="primary.contrastText"
+            sx={{ textDecoration: "none" }}
+            component={RouterLink}
+            to="/"
           >
-            Digital Table
-          </Typography>
+            <Typography
+              variant="h6"
+              noWrap
+              component="a"
+              sx={{
+                mr: 2,
+                display: { xs: "none", md: "flex" },
+                fontFamily: "monospace",
+                fontWeight: 700,
+                letterSpacing: ".3rem",
+                color: "inherit",
+                textDecoration: "none",
+              }}
+            >
+              Digital Table
+            </Typography>
+          </Link>
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"
@@ -135,26 +141,35 @@ function NavBar() {
           {/* ------------------------------- when diplay small ------------------------------- */}
           <Avatar
             sx={{ display: { xs: "flex", md: "none" }, mr: 2 }}
-            src="src\assets\round-table.png"
+            src="round-table.png"
           />
-          <Typography
-            variant="h6"
-            noWrap
-            component="a"
-            href="/"
+          <Link
+            color="primary.contrastText"
             sx={{
-              mr: 2,
-              display: { xs: "flex", md: "none" },
-              flexGrow: 1,
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
               textDecoration: "none",
+              flexGrow: 1,
+              display: { xs: "flex", md: "none" },
             }}
+            component={RouterLink}
+            to="/"
           >
-            Digital Table
-          </Typography>
+            <Typography
+              variant="h6"
+              noWrap
+              component="a"
+              sx={{
+                mr: 2,
+                display: { xs: "flex", md: "none" },
+                fontFamily: "monospace",
+                fontWeight: 700,
+                letterSpacing: ".3rem",
+                color: "inherit",
+                textDecoration: "none",
+              }}
+            >
+              Digital Table
+            </Typography>
+          </Link>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
               <Link
@@ -174,7 +189,7 @@ function NavBar() {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="\src\assets\avatar-male-1.png" />
+                <Avatar src="avatar-male-1.png" />
               </IconButton>
             </Tooltip>
             <Menu
