@@ -131,7 +131,7 @@ function NavBar() {
                   component={RouterLink}
                   to={page.path}
                 >
-                  <MenuItem onClick={handleCloseNavMenu}>
+                  <MenuItem onClick={() => handleCloseNavMenu()}>
                     <Typography textAlign="center">{page.title}</Typography>
                   </MenuItem>
                 </Link>
@@ -179,7 +179,7 @@ function NavBar() {
                 key={page.title}
                 to={page.path}
               >
-                <MenuItem onClick={handleCloseNavMenu}>
+                <MenuItem onClick={() => handleCloseNavMenu()}>
                   <Typography textAlign="center">{page.title}</Typography>
                 </MenuItem>
               </Link>

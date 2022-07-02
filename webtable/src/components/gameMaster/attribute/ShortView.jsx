@@ -12,7 +12,6 @@ import {
 import PropTypes from "prop-types";
 
 /* ------------------------- Stlye variables ------------------------- */
-/* ------------------------------ START ------------------------------ */
 const styleBox = {
   width: "50%",
   height: "5ch",
