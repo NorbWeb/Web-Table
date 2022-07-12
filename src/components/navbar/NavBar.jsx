@@ -69,7 +69,7 @@ function NavBar() {
           {/* ------------------------------- when diplay large ------------------------------- */}
           <Avatar
             sx={{ display: { xs: "none", md: "flex" }, mr: 2 }}
-            src="round-table.png"
+            src="round-table-48.png"
           />
           <Link
             color="primary.contrastText"
@@ -91,7 +91,7 @@ function NavBar() {
                 textDecoration: "none",
               }}
             >
-              Digital Table
+              Web Table
             </Typography>
           </Link>
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -141,7 +141,7 @@ function NavBar() {
           {/* ------------------------------- when diplay small ------------------------------- */}
           <Avatar
             sx={{ display: { xs: "flex", md: "none" }, mr: 2 }}
-            src="round-table.png"
+            src="round-table-48.png"
           />
           <Link
             color="primary.contrastText"
@@ -167,7 +167,7 @@ function NavBar() {
                 textDecoration: "none",
               }}
             >
-              Digital Table
+              Web Table
             </Typography>
           </Link>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
@@ -189,7 +189,7 @@ function NavBar() {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar src="avatar-male-1.png" />
+                <Avatar src="avatar-male-1-48.png" />
               </IconButton>
             </Tooltip>
             <Menu
