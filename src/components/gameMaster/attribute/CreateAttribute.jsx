@@ -1,5 +1,6 @@
 import { Box, Button, Stack, TextField, Typography } from "@mui/material";
 import PropTypes from "prop-types";
+import { useRef } from "react";
 
 function CreateAttribute({
   name,
@@ -13,6 +14,16 @@ function CreateAttribute({
   handleSubmit,
   editOpen,
 }) {
+  // Reference for SubmitButton to set focus of cursor on first input field after click.
+  const ref = useRef(null);
+  // onClick function for submitButton
+  const handleSubmitButton = () => {
+    // submit fuction with state logic
+    handleSubmit();
+    // set focus on ref
+    ref.current.focus();
+  };
+
   return (
     <Box
       className="create-attribute"
@@ -34,6 +45,7 @@ function CreateAttribute({
               setName(e.target.value);
             }}
             value={editOpen ? "" : name}
+            inputRef={ref}
           />
           <TextField
             type="text"
@@ -70,7 +82,7 @@ function CreateAttribute({
       <Button
         sx={{ mt: 2 }}
         variant="contained"
-        onClick={handleSubmit}
+        onClick={handleSubmitButton}
         type="submit"
       >
         Add Attribute
@@ -94,4 +106,3 @@ CreateAttribute.propTypes = {
 };
 
 export default CreateAttribute;
-
