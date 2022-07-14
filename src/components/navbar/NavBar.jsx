@@ -11,7 +11,7 @@ import Avatar from "@mui/material/Avatar";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import PropTypes from "prop-types";
-import { Link, Button } from "@mui/material";
+import { Link } from "@mui/material";
 import { Link as RouterLink, MemoryRouter } from "react-router-dom";
 import { StaticRouter } from "react-router-dom/server";
 
@@ -69,7 +69,7 @@ function NavBar() {
           {/* ------------------------------- when diplay large ------------------------------- */}
           <Avatar
             sx={{ display: { xs: "none", md: "flex" }, mr: 2 }}
-            src="round-table.png"
+            src="round-table-48.png"
           />
           <Link
             color="primary.contrastText"
@@ -91,7 +91,7 @@ function NavBar() {
                 textDecoration: "none",
               }}
             >
-              Digital Table
+              Web Table
             </Typography>
           </Link>
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -131,7 +131,7 @@ function NavBar() {
                   component={RouterLink}
                   to={page.path}
                 >
-                  <MenuItem onClick={handleCloseNavMenu}>
+                  <MenuItem onClick={() => handleCloseNavMenu()}>
                     <Typography textAlign="center">{page.title}</Typography>
                   </MenuItem>
                 </Link>
@@ -141,7 +141,7 @@ function NavBar() {
           {/* ------------------------------- when diplay small ------------------------------- */}
           <Avatar
             sx={{ display: { xs: "flex", md: "none" }, mr: 2 }}
-            src="round-table.png"
+            src="round-table-48.png"
           />
           <Link
             color="primary.contrastText"
@@ -167,7 +167,7 @@ function NavBar() {
                 textDecoration: "none",
               }}
             >
-              Digital Table
+              Web Table
             </Typography>
           </Link>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
@@ -179,7 +179,7 @@ function NavBar() {
                 key={page.title}
                 to={page.path}
               >
-                <MenuItem onClick={handleCloseNavMenu}>
+                <MenuItem onClick={() => handleCloseNavMenu()}>
                   <Typography textAlign="center">{page.title}</Typography>
                 </MenuItem>
               </Link>
@@ -189,7 +189,7 @@ function NavBar() {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar src="avatar-male-1.png" />
+                <Avatar src="avatar-male-1-48.png" />
               </IconButton>
             </Tooltip>
             <Menu
