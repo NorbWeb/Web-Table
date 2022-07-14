@@ -34,7 +34,7 @@ const CustomTooltip = styled(({ className, ...props }) => (
 }));
 /* ------------------------------- END ------------------------------- */
 
-function ShortView({ attributes }) {
+function ShortViewAttribute({ attributes }) {
   return (
     <Box
       className="attributes-short-view"
@@ -84,8 +84,8 @@ function ShortView({ attributes }) {
   );
 }
 
-ShortView.propTypes = {
+ShortViewAttribute.propTypes = {
   attributes: PropTypes.array.isRequired,
 };
 
-export default ShortView;
+export default ShortViewAttribute;

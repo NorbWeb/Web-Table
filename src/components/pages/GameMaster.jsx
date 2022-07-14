@@ -3,6 +3,7 @@ import NavBar from "../navbar/NavBar";
 import { Box, Typography, Tabs, Tab } from "@mui/material";
 import Attributes from "../gameMaster/attributes/Attributes";
 import PropTypes from "prop-types";
+import Skills from "../gameMaster/skills/Skills";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -78,7 +79,7 @@ export default function GameMaster() {
           <Attributes />
         </TabPanel>
         <TabPanel value={value} index={2}>
-          No skills? What??
+          <Skills />
         </TabPanel>
       </Box>
     </div>

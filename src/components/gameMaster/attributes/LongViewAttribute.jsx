@@ -11,7 +11,7 @@ import EditIcon from "@mui/icons-material/Edit";
 import CheckIcon from "@mui/icons-material/Check";
 import DeleteIcon from "@mui/icons-material/Delete";
 
-function LongView({
+function LongViewAttribute({
   attributes,
   name,
   setName,
@@ -201,7 +201,7 @@ function LongView({
   );
 }
 
-LongView.propTypes = {
+LongViewAttribute.propTypes = {
   attributes: PropTypes.array.isRequired,
   handleDelete: PropTypes.func.isRequired,
   name: PropTypes.string.isRequired,
@@ -218,5 +218,5 @@ LongView.propTypes = {
   activeIndex: PropTypes.number.isRequired,
 };
 
-export default LongView;
+export default LongViewAttribute;
 
