@@ -54,7 +54,7 @@ const startList = [
   },
 ];
 
-function Attribute() {
+function Attributes() {
   const [name, setName] = useState("");
   const [short, setShort] = useState("");
   const [startValue, setStartValue] = useState("");
@@ -146,4 +146,4 @@ function Attribute() {
   );
 }
 
-export default Attribute;
+export default Attributes;
